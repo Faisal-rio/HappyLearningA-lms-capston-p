@@ -1,0 +1,91 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1.2rem; /* Reduced padding for smaller height */
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.4s ease;
+}
+
+.navbar:hover {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.85rem; /* Slightly reduced font size */
+  font-weight: bold;
+  color: #007bff;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-logo {
+  margin-right: 10px; /* Reduced space between logo and brand */
+  height: 40px; /* Reduced logo height */
+}
+
+.navbar-brand:hover {
+  color: #0056b3;
+  transform: scale(1.08);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-nav {
+  flex-direction: row;
+  margin-left: auto; /* Align the navbar items to the right */
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #0d0d0d;
+  font-size: 1.1rem; /* Slightly reduced font size */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.4s, transform 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  transform: scale(1.08);
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+  .navbar-nav {
+    text-align: center;
+    margin-top: 15px;
+  }
+  .nav-link {
+    display: block;
+    margin: 8px 0;
+  }
+  .sign-up-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}

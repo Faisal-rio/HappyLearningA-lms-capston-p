@@ -1,0 +1,649 @@
+.homepage-container {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 49px;
+  position: relative;
+  z-index: 2;
+  background-color: white; /* Ensures the content background is solid */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Institute Name Styles */
+.institute-name {
+  font-size: 3rem; /* Larger for strong emphasis */
+  color: #1d3557; /* Deep, professional blue */
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Roboto Slab", serif; /* Elegant serif font for a professional feel */
+  letter-spacing: 2px; /* Increased spacing for sophistication */
+  text-transform: uppercase; /* All caps for strong branding */
+}
+
+/* Institute Description Styles */
+.institute-description {
+  font-size: 1.25rem; /* Balanced size for readability */
+  font-weight: bold; /* Normal weight for a sleek look */
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 70%; /* Slightly wider for better balance */
+  margin: 0 auto 60px; /* Centered with top and bottom margin */
+  color: #4a4a4a; /* Soft charcoal for modern readability */
+  line-height: 1.75; /* Increased line height for a clean, airy feel */
+  font-family: "Lato", sans-serif; /* Modern sans-serif font for body text */
+}
+
+/* Professional Features Section */
+.features-container {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding for spacing */
+}
+
+.feature-item {
+  flex: 1;
+  text-align: center;
+  margin: 0 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+}
+
+.feature-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  opacity: 0.9; /* Slight fade effect on hover */
+}
+
+.feature-item img {
+  max-width: 70%; /* Adjusted for better balance */
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 6px; /* Rounded corners on images */
+}
+
+.feature-title {
+  font-size: 1.4rem; /* Slightly larger for emphasis */
+  margin-bottom: 10px;
+  color: #08653e; /* Green color for titles */
+  font-family: "Roboto Slab", serif; /* Elegant font for titles */
+  text-transform: capitalize; /* Title case for professionalism */
+}
+
+.feature-description {
+  font-size: 1rem; /* Balanced size */
+  color: #121111; /* Charcoal for readability */
+  line-height: 1.6; /* Consistent line height */
+  font-family: "Lato", sans-serif; /* Modern sans-serif font */
+}
+
+/* InstituteDetails.css */
+
+/* Section container */
+.institute-details-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content container */
+.institute-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 768px) {
+  .institute-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Text block styling */
+.institute-text {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.institute-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.institute-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Achievements styling */
+.achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .achievements {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+
+.achievement {
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: jump 2s infinite; /* Apply jumping animation */
+}
+
+.achievement h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #f91818;
+}
+
+.achievement p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #050505;
+}
+
+/* Image container */
+.institute-image {
+  flex: 1;
+  max-width: 500px;
+  margin-top: 20px;
+  margin-right: 50px;
+  overflow: hidden; /* Ensures no overflow */
+}
+
+/* Image styling with animation */
+.institute-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: jump 2s infinite; /* Apply jumping animation */
+}
+
+/* Keyframes for the jumping animation */
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the jump height as needed */
+  }
+}
+/*courses section */
+/* Overall container for the courses section */
+.courses-section {
+  padding: 50px 0;
+  background-color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.courses-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #141313;
+  position: relative;
+  z-index: 2;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns */
+  gap: 20px; /* Space between columns and rows */
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  animation: slideUp 1s ease-in-out;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(244, 244, 244, 0.15);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease,
+    background-color 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.course-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  background-color: #f0f0f0;
+}
+
+.course-image {
+  width: 100%;
+  height: 180px; /* Increased height for larger images */
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(85%);
+}
+
+.course-card:hover .course-image {
+  transform: scale(1.1);
+  filter: brightness(100%);
+}
+
+.course-info {
+  padding: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.course-title {
+  font-size: 1.5rem; /* Slightly larger font size */
+  color: #333;
+  margin: 0;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.explore-button-container {
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.explore-button {
+  background: linear-gradient(135deg, #007bff, #bb7812);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.explore-button:hover {
+  background: linear-gradient(135deg, #1c3008, #20921e);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.highlighted-features-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.highlighted-features-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.highlighted-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 15px;
+}
+
+.feature h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature p {
+  font-size: 1em;
+  color: #666;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.team-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.team-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 220px;
+  margin: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  color: #777;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.team-member:hover {
+  animation: bounce 1s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.testimonials-section {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding for smaller form */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: scale(0.85); /* Slightly smaller */
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.testimonial img {
+  border-radius: 50%;
+  width: 100px; /* Increased image size */
+  height: 100px; /* Increased image size */
+  margin-bottom: 15px;
+  object-fit: cover;
+  animation: bounceIn 1s ease-in-out;
+}
+
+.testimonial h4 {
+  font-size: 1.25rem;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  color: #0a0a0a;
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.trusted-partners-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.trusted-partners-section h2 {
+  font-size: 2.5em; /* Increased size for better visibility */
+  margin-bottom: 30px; /* Increased margin for better spacing */
+  color: #0f0f0f;
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+.trusted-partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+
+.trusted-partner-logo {
+  flex: 1 0 100px; /* Container size */
+  max-width: 100px; /* Fixed size for all logos */
+  height: 100px; /* Fixed height for all logos */
+  overflow: hidden; /* Hide overflow to keep size consistent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.trusted-partner-logo:hover {
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
+
+.trusted-partner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .homepage-container {
+    width: 90%; /* Wider container for small screens */
+    padding-top: 20px; /* Adjust padding */
+  }
+
+  .institute-name {
+    font-size: 2.5rem; /* Smaller font size for smaller screens */
+  }
+
+  .institute-description {
+    font-size: 1rem; /* Adjust font size */
+    max-width: 90%; /* Ensure description fits screen */
+  }
+
+  .features-container {
+    flex-direction: column; /* Stack features vertically */
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+
+  .team-members {
+    flex-direction: column; /* Stack team members vertically */
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(1, 1fr); /* Single column for testimonials */
+  }
+
+  .trusted-partners-grid {
+    flex-direction: column; /* Stack logos vertically */
+  }
+}
+
+/* Tablet and Small Laptop Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .homepage-container {
+    width: 80%; /* Adjust container width */
+  }
+
+  .features-container {
+    flex-direction: row; /* Adjust layout to fit screen */
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+  }
+
+  .team-members {
+    flex-direction: row; /* Arrange team members in a row */
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .trusted-partners-grid {
+    flex-wrap: wrap; 
+  }
+}

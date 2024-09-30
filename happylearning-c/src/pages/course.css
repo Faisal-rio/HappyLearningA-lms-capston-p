@@ -1,0 +1,302 @@
+/* CSS Variables */
+:root {
+  --primary-color: #4a154b;
+  --secondary-color: #7d3c98;
+  --text-color: #111111;
+  --background-color: #f4f7f9;
+  --modal-background: #fff;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --btn-radius: 50px;
+  --transition-speed: 0.3s;
+}
+
+/* General Layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+}
+
+.container {
+  padding: 60px 20px;
+  margin-top: 20px;
+}
+
+.row.mb-5 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+.col-md-6 {
+  flex: 1;
+}
+
+.col-md-6 img.img-fluid {
+  max-width: 110%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+}
+
+.col-md-6 img.img-fluid:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Content */
+.text-content {
+  padding: 20px;
+  color: var(--text-color);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cta {
+  font-size: 1.2em;
+  font-weight: 600;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Courses Section */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding-top: 5%;
+  margin-bottom: 120px; /* Space for footer */
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  padding: 20px;
+  background: var(--modal-background); /* Use variable for consistency */
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Enroll Modal */
+.enroll-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modal-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.enroll-modal-content {
+  background: var(--modal-background);
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  position: relative;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--btn-radius);
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-footer .btn-success {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: var(--btn-radius);
+}
+
+.modal-footer .btn-success:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: var(--btn-radius);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-enroll {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: var(--btn-radius);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.btn-enroll:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Scroll Animation */
+.row.mb-5.visible,
+.footer.visible {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row.mb-5 {
+    flex-direction: column;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-bottom: 80px;
+  }
+
+  .enroll-modal-content {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 30px 10px;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+  }
+
+  .enroll-modal-content {
+    width: 90%;
+    max-width: 360px;
+  }
+}

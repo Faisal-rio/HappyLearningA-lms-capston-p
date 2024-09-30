@@ -1,0 +1,279 @@
+/* Container for the entire sign-up page */
+.signup-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  background: url("https://img.freepik.com/free-photo/office-desk-table-with-pencils-supplies_155003-5657.jpg?uid=R159796910&ga=GA1.1.100659340.1722111475&semt=ais_hybridhttps://img.freepik.com/premium-photo/laptop-with-program-code-technological-background-with-program-code-elements-shields_272306-174.jpg?ga=GA1.1.100659340.1722111475&semt=ais_hybrid")
+    no-repeat center center fixed;
+  background-size: cover;
+  padding: 0 80px;
+  margin-top: 40px;
+  opacity: 0;
+  transform: scale(1.1);
+  animation: fadeInScale 1s forwards;
+}
+
+/* Left side with additional content */
+.signup-container .left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 150px;
+  transform: translateX(-100%);
+  animation: slideIn 1s forwards;
+}
+
+.signup-container .left-heading {
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.signup-container .institute-name {
+  font-size: 22px;
+  color: #e0e0e0;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.signup-container .additional-content {
+  font-size: 22px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* Right side with the sign-up form */
+.signup-container .right-form {
+  flex: 1;
+  max-width: 450px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-left: 100px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Welcome text */
+.signup-container .right-form h2 {
+  color: #333333;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Labels for inputs */
+.signup-container .right-form label {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Input fields */
+.signup-container .right-form input[type="text"],
+.signup-container .right-form input[type="email"],
+.signup-container .right-form input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Input field focus state */
+.signup-container .right-form input[type="text"]:focus,
+.signup-container .right-form input[type="email"]:focus,
+.signup-container .right-form input[type="password"]:focus {
+  border-color: #5a67d8;
+  outline: none;
+  box-shadow: 0 0 8px rgba(90, 103, 216, 0.5);
+}
+
+/* Buttons */
+.signup-container .right-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5a67d8;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: pulse 1.5s infinite;
+}
+
+/* Button hover effect */
+.signup-container .right-form button:hover {
+  background-color: #434eaa;
+  transform: scale(1.05);
+}
+
+/* Additional content styling */
+.signup-container .additional-content p {
+  margin-bottom: 10px;
+}
+
+/* Error message styling */
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .signup-container {
+    padding: 0 40px;
+  }
+
+  .signup-container .left-section {
+    margin-left: 50px;
+  }
+
+  .signup-container .right-form {
+    max-width: 100%;
+    padding: 20px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .signup-container .left-section {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .signup-container .right-form {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .signup-container .left-heading {
+    font-size: 28px;
+  }
+
+  .signup-container .institute-name,
+  .signup-container .additional-content {
+    font-size: 18px;
+  }
+
+  .signup-container .right-form h2 {
+    font-size: 24px;
+  }
+
+  .signup-container .right-form label {
+    font-size: 12px;
+  }
+
+  .signup-container .right-form input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .signup-container .right-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .error-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .signup-container {
+    padding: 0 10px;
+  }
+
+  .signup-container .right-form {
+    padding: 10px;
+  }
+
+  .signup-container .left-heading {
+    font-size: 24px;
+  }
+
+  .signup-container .institute-name,
+  .signup-container .additional-content {
+    font-size: 16px;
+  }
+
+  .signup-container .right-form h2 {
+    font-size: 20px;
+  }
+
+  .signup-container .right-form label {
+    font-size: 10px;
+  }
+
+  .signup-container .right-form input {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .signup-container .right-form button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .error-text {
+    font-size: 10px;
+  }
+}

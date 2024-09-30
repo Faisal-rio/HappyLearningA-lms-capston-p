@@ -1,0 +1,274 @@
+/* Apply background image to the entire page */
+body.contact-page {
+  background: url("https://img.freepik.com/free-photo/office-desk-table-with-pencils-supplies_155003-5657.jpg?uid=R159796910&ga=GA1.1.100659340.1722111475&semt=ais_hybrid")
+    no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+/* Container for the contact section */
+.contact-us-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 140px auto 0 auto;
+  max-width: 1200px;
+  background-color: #ffffff;
+  background-size: cover;
+  gap: 30px;
+  animation: fadeInUp 1.2s ease-in-out;
+  flex-wrap: wrap;
+}
+
+/* Ensure the form and contact details have a solid background for readability */
+.contact-details,
+.contact-form {
+  flex-basis: 45%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects for contact details and form */
+.contact-details:hover,
+.contact-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact details styling */
+.contact-details {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 280px;
+}
+
+/* Contact info styling */
+.contact-info {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.contact-info:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact info text styling */
+.contact-info h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.contact-info p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-info a {
+  color: #00e5a8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #00c08d;
+}
+
+.contact-icon {
+  font-size: 24px;
+  margin-right: 12px;
+  color: #00e5a8;
+}
+
+/* Contact form styling */
+.contact-form h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 48%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00e5a8;
+  box-shadow: 0 0 6px rgba(0, 229, 168, 0.3);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+}
+
+.form-group textarea {
+  height: 100px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #00e5a8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.submit-btn:hover {
+  background-color: #00c08d;
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-us-container {
+    flex-direction: column;
+    margin: 30px auto;
+  }
+
+  .contact-details,
+  .contact-form {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-us-container {
+    padding: 20px;
+  }
+
+  .contact-details,
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-info h4 {
+    font-size: 16px;
+  }
+
+  .contact-info p {
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-us-container {
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  .contact-details,
+  .contact-form {
+    padding: 15px;
+  }
+
+  .contact-info h4 {
+    font-size: 14px;
+  }
+
+  .contact-info p {
+    font-size: 10px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}
+.success-message {
+  color: rgb(74, 222, 74);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
