@@ -248,7 +248,7 @@ const Course = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post("http://localhost:5000/api/enroll", {
+        const response = await axios.post("https://lms-last-backend-1.onrender.com/api/enroll", {
           ...formData,
           courseTitle: selectedCourse.title,
           price: selectedCourse.price,

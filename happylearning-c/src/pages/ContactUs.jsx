@@ -41,7 +41,7 @@ const ContactUs = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact",
+        "https://lms-last-backend-1.onrender.com/api/contact",
         formData
       );
       console.log("Response:", response.data);
