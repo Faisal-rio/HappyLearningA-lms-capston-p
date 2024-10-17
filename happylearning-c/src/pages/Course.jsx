@@ -1,6 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import "./course.css"; // Import your CSS file
+import "./course.css";
+
+// Mock user profile data
+const userProfile = {
+  name: "",
+  email: "",
+  phone: "",
+};
 
 // Debounce utility function
 const debounce = (func, wait) => {
@@ -10,6 +17,7 @@ const debounce = (func, wait) => {
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
 };
+
 const courses = [
   {
     title: "Full Stack Web Developer",
@@ -191,42 +199,28 @@ const courses = [
 
 const Course = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+  const [formData, setFormData] = useState({ ...userProfile });
   const [errors, setErrors] = useState({});
-  const [successMessage, setSuccessMessage] = useState(""); // State for success message
+  const [successMessage, setSuccessMessage] = useState("");
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
+  const enrolledCoursesRef = useRef(null);
 
+  // Scroll to top on component mount
   useEffect(() => {
-    const handleScroll = () => {
-      const row = document.querySelector(".row.mb-5");
-      const footer = document.querySelector(".footer");
-      const scrollY = window.scrollY || window.pageYOffset;
-      const rowTriggerHeight = window.innerHeight * 0.7;
-
-      if (row && row.getBoundingClientRect().top < rowTriggerHeight) {
-        row.classList.add("visible");
-      } else {
-        row.classList.remove("visible");
-      }
-
-      if (footer) {
-        if (scrollY > 200) {
-          footer.classList.add("visible");
-        } else {
-          footer.classList.remove("visible");
-        }
-      }
-    };
-
-    const debouncedHandleScroll = debounce(handleScroll, 100);
-    window.addEventListener("scroll", debouncedHandleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", debouncedHandleScroll);
-    };
+    window.scrollTo(0, 0);
+    const storedCourses =
+      JSON.parse(localStorage.getItem("enrolledCourses")) || [];
+    setEnrolledCourses(storedCourses);
   }, []);
+
+  // Save enrolled courses to local storage
+  useEffect(() => {
+    localStorage.setItem("enrolledCourses", JSON.stringify(enrolledCourses));
+  }, [enrolledCourses]);
 
   const handleEnrollClick = (course) => {
     setSelectedCourse(course);
+    setFormData({ ...userProfile });
   };
 
   const handleChange = (e) => {
@@ -248,13 +242,29 @@ const Course = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post("https://lms-last-backend-1.onrender.com/api/enroll", {
-          ...formData,
-          courseTitle: selectedCourse.title,
-          price: selectedCourse.price,
-        });
-        setSuccessMessage("Enrollment Successful!"); // Set the success message
-        handleCancel(); // Close the modal on successful submission
+        const enrollmentDate = new Date().toLocaleDateString(); // Get the current date
+        const response = await axios.post(
+          "https://lms-last-backend-1.onrender.com/api/enroll",
+          {
+            ...formData,
+            courseTitle: selectedCourse.title,
+            price: selectedCourse.price,
+            enrollmentDate, // Include enrollment date in the payload
+          }
+        );
+        setSuccessMessage("Enrollment Successful!");
+        const newEnrolledCourses = [
+          ...enrolledCourses,
+          {
+            ...selectedCourse,
+            enrollmentDate, // Save the enrollment date with the course
+          },
+        ];
+        setEnrolledCourses(newEnrolledCourses); // Add course to enrolled courses list
+        handleCancel();
+
+        // Scroll to the enrolled courses section
+        enrolledCoursesRef.current.scrollIntoView({ behavior: "smooth" });
       } catch (error) {
         console.error("Enrollment error:", error);
       }
@@ -263,24 +273,23 @@ const Course = () => {
 
   const handleCancel = () => {
     setSelectedCourse(null);
-    setFormData({ name: "", email: "", phone: "" });
     setErrors({});
-    setSuccessMessage(""); // Reset success message
+    setSuccessMessage("");
   };
 
   return (
     <div className="container mt-5">
       {/* Header Section */}
       <header className="mb-5 text-center">
-        <h1 style={{ color: "#4a154b" }}>Welcome to Our Online Courses</h1>
-        <p>
+        <h1 className="header-title">Welcome to Our Online Courses</h1>
+        <p className="header-subtext">
           Enhance your skills with our comprehensive and carefully curated
           courses.
         </p>
       </header>
 
       {/* Description and Image Section */}
-      <div className="row mb-5 align-items-center">
+      <div className="row mb-5 align-items-center description-row">
         <div className="col-md-6">
           <div className="text-content">
             <p className="description">
@@ -305,7 +314,7 @@ const Course = () => {
           <img
             src="https://img.freepik.com/premium-photo/indian-man-computer-engineer-programmer-sits-computer-with-monitor-ai-generated_755721-6141.jpg?w=996"
             alt="Best Viewing Experience"
-            className="img-fluid rounded shadow-lg"
+            className="img-fluid image-styled"
           />
         </div>
       </div>
@@ -335,7 +344,7 @@ const Course = () => {
         ))}
       </div>
 
-      {/* Display success message */}
+      {/* Success Message */}
       {successMessage && (
         <div className="alert alert-success mt-3" role="alert">
           {successMessage}
@@ -404,6 +413,26 @@ const Course = () => {
           </div>
         </div>
       )}
+
+      {/* Enrolled Courses Section */}
+      <div ref={enrolledCoursesRef} className="enrolled-courses mt-5">
+        {enrolledCourses.length > 0 ? (
+          <>
+            <h2>Your Enrolled Courses</h2>
+            <ul className="list-group">
+              {enrolledCourses.map((course, index) => (
+                <li key={index} className="list-group-item">
+                  <strong>{course.title}</strong> - Enrolled on:{" "}
+                  {course.enrollmentDate}
+                  <br /> Price: ₹{course.price} | Duration: {course.duration}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <h4>No enrolled courses yet.</h4>
+        )}
+      </div>
     </div>
   );
 };
