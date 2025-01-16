@@ -22,7 +22,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0px;
   color: #ffffff;
   text-align: center;
   margin-left: 150px; /* Adjusted for better spacing */
@@ -266,7 +266,7 @@
 
 @media (max-width: 576px) {
   .login-container {
-    padding: 0 10px;
+    padding: 10 10px;
   }
 
   .login-container .left-heading {

@@ -19,7 +19,7 @@ body.contact-page {
   max-width: 1200px;
   background-color: #ffffff;
   background-size: cover;
-  gap: 30px;
+  gap: 20px;
   animation: fadeInUp 1.2s ease-in-out;
   flex-wrap: wrap;
 }
@@ -57,13 +57,13 @@ body.contact-page {
 .contact-info {
   position: relative;
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
   color: #fff;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 12px rgba(242, 240, 240, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 1s ease-in-out;
 }

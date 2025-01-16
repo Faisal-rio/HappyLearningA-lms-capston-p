@@ -1,4 +1,5 @@
 /* src/components/Header.css */
+
 .header-container {
   height: 60vh; /* Adjust height to fit your design */
   width: 100%; /* Full width of the container */
@@ -47,3 +48,4 @@
 .carousel-indicators .active {
   background-color: #fff; /* Highlight active indicator */
 }
+

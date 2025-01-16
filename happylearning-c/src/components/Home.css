@@ -587,8 +587,12 @@
 /* Mobile Styles */
 @media (max-width: 767px) {
   .homepage-container {
-    width: 90%; /* Wider container for small screens */
+    width: 95%; /* Slightly wider container for small screens */
+    max-width: 100%; /* Ensures no horizontal scrolling */
     padding-top: 20px; /* Adjust padding */
+    padding-left: 15px; /* Add left padding for better alignment */
+    padding-right: 15px; /* Add right padding for better alignment */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
   }
 
   .institute-name {
@@ -645,5 +649,83 @@
 
   .trusted-partners-grid {
     flex-wrap: wrap; 
+  }
+}
+/* General Mobile View Adjustments */
+@media (max-width: 768px) {
+  .homepage-container {
+    width: 90%;
+    padding-top: 20px;
+    margin: 0 auto;
+  }
+
+  .institute-name {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .institute-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .features-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feature-item {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  .institute-details-section {
+    padding: 30px 15px;
+    margin: 0 10px;
+  }
+
+  .institute-content {
+    flex-direction: column;
+  }
+
+  .institute-text {
+    padding: 10px;
+  }
+
+  .achievements {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .institute-image {
+    margin: 20px 0;
+  }
+
+  .courses-section {
+    padding: 30px 10px;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .team-members {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-member {
+    max-width: 100%;
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .trusted-partners-grid {
+    flex-direction: column;
+    gap: 20px;
   }
 }
